@@ -1,0 +1,21 @@
+# Phase 0-1: ingestion + service
+requests==2.32.3
+langchain==0.3.7
+langchain-community==0.3.7
+qdrant-client==1.12.1
+sentence-transformers==3.3.1
+fastapi==0.115.5
+uvicorn==0.32.1
+pydantic==2.10.2
+
+# Phase 2: evaluation + tracking
+ragas==0.2.6
+mlflow==2.18.0
+datasets==3.1.0
+
+# Phase 4: tracing
+langfuse==2.53.9
+
+# dev
+python-dotenv==1.0.1
+pytest==8.3.3

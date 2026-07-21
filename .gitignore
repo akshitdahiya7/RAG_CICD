@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+# data artifacts (raw catalog is fetched by script, not committed as huge blobs)
+data/raw/*.json
+!data/raw/.gitkeep
+
+# mlflow / experiment artifacts
+mlruns/
+mlartifacts/
+
+# vector db local storage
+qdrant_storage/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs
+*.log

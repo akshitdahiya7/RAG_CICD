@@ -1,0 +1,226 @@
+[
+  {
+    "id": "auto-cm-7",
+    "question": "What does CM-7 (Least Functionality) require?",
+    "ground_truth": "Configure the system to provide only [organization-defined parameter] ; and\nProhibit or restrict the use of the following functions, ports, protocols, software, and/or services: [organization-defined parameter].",
+    "control_id": "cm-7",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-ac-14",
+    "question": "What does AC-14 (Permitted Actions Without Identification or Authentication) require?",
+    "ground_truth": "Identify [organization-defined parameter] that can be performed on the system without identification or authentication consistent with organizational mission and business functions; and\nDocument and provide supporting rationale in the security plan for the system, user actions not requiring identification or authentication.",
+    "control_id": "ac-14",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-pl-8",
+    "question": "What does PL-8 (Security and Privacy Architectures) require?",
+    "ground_truth": "Develop security and privacy architectures for the system that:\nDescribe the requirements and approach to be taken for protecting the confidentiality, integrity, and availability of organizational information;\nDescribe the requirements and approach to be taken for processing personally identifiable information to minimize privacy risk to individuals;\nDescribe how the architectures are integrated into and support the enterprise architecture; and\nDescribe any assumptions about, and dependencies on, external systems and services;\nReview and update the architectures [organization-defined parameter] to reflect changes in the enterprise architecture; and\nReflect planned architecture changes in security and privacy plans, Concept of Operations (CONOPS), criticality analysis, organizational procedures, and procurements and acquisitions.",
+    "control_id": "pl-8",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-pe-13",
+    "question": "What does PE-13 (Fire Protection) require?",
+    "ground_truth": "Employ and maintain fire detection and suppression systems that are supported by an independent energy source.",
+    "control_id": "pe-13",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-pe-1",
+    "question": "What does PE-1 (Policy and Procedures) require?",
+    "ground_truth": "Develop, document, and disseminate to [organization-defined parameter]:\n[organization-defined parameter] physical and environmental protection policy that:\nAddresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and\nIs consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and\nProcedures to facilitate the implementation of the physical and environmental protection policy and the associated physical and environmental protection controls;\nDesignate an [organization-defined parameter] to manage the development, documentation, and dissemination of the physical and environmental protection policy and procedures; and\nReview and update the current physical and environmental protection:\nPolicy [organization-defined parameter] and following [organization-defined parameter] ; and\nProcedures [organization-defined parameter] and following [organization-defined parameter].",
+    "control_id": "pe-1",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-cp-8",
+    "question": "What does CP-8 (Telecommunications Services) require?",
+    "ground_truth": "Establish alternate telecommunications services, including necessary agreements to permit the resumption of [organization-defined parameter] for essential mission and business functions within [organization-defined parameter] when the primary telecommunications capabilities are unavailable at either the primary or alternate processing or storage sites.",
+    "control_id": "cp-8",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-cm-2",
+    "question": "What does CM-2 (Baseline Configuration) require?",
+    "ground_truth": "Develop, document, and maintain under configuration control, a current baseline configuration of the system; and\nReview and update the baseline configuration of the system:\n[organization-defined parameter];\nWhen required due to [organization-defined parameter] ; and\nWhen system components are installed or upgraded.",
+    "control_id": "cm-2",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-si-15",
+    "question": "What does SI-15 (Information Output Filtering) require?",
+    "ground_truth": "Validate information output from the following software programs and/or applications to ensure that the information is consistent with the expected content: [organization-defined parameter].",
+    "control_id": "si-15",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-ca-2",
+    "question": "What does CA-2 (Control Assessments) require?",
+    "ground_truth": "Select the appropriate assessor or assessment team for the type of assessment to be conducted;\nDevelop a control assessment plan that describes the scope of the assessment including:\nControls and control enhancements under assessment;\nAssessment procedures to be used to determine control effectiveness; and\nAssessment environment, assessment team, and assessment roles and responsibilities;\nEnsure the control assessment plan is reviewed and approved by the authorizing official or designated representative prior to conducting the assessment;\nAssess the controls in the system and its environment of operation [organization-defined parameter] to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to meeting established security and privacy requirements;\nProduce a control assessment report that document the results of the assessment; and\nProvide the results of the control assessment to [organization-defined parameter].",
+    "control_id": "ca-2",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-sa-22",
+    "question": "What does SA-22 (Unsupported System Components) require?",
+    "ground_truth": "Replace system components when support for the components is no longer available from the developer, vendor, or manufacturer; or\nProvide the following options for alternative sources for continued support for unsupported components [organization-defined parameter].",
+    "control_id": "sa-22",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-ac-19",
+    "question": "What does AC-19 (Access Control for Mobile Devices) require?",
+    "ground_truth": "Establish configuration requirements, connection requirements, and implementation guidance for organization-controlled mobile devices, to include when such devices are outside of controlled areas; and\nAuthorize the connection of mobile devices to organizational systems.",
+    "control_id": "ac-19",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-ac-18",
+    "question": "What does AC-18 (Wireless Access) require?",
+    "ground_truth": "Establish configuration requirements, connection requirements, and implementation guidance for each type of wireless access; and\nAuthorize each type of wireless access to the system prior to allowing such connections.",
+    "control_id": "ac-18",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-ca-6",
+    "question": "What does CA-6 (Authorization) require?",
+    "ground_truth": "Assign a senior official as the authorizing official for the system;\nAssign a senior official as the authorizing official for common controls available for inheritance by organizational systems;\nEnsure that the authorizing official for the system, before commencing operations:\nAccepts the use of common controls inherited by the system; and\nAuthorizes the system to operate;\nEnsure that the authorizing official for common controls authorizes the use of those controls for inheritance by organizational systems;\nUpdate the authorizations [organization-defined parameter].",
+    "control_id": "ca-6",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-mp-6",
+    "question": "What does MP-6 (Media Sanitization) require?",
+    "ground_truth": "Sanitize [organization-defined parameter] prior to disposal, release out of organizational control, or release for reuse using [organization-defined parameter] ; and\nEmploy sanitization mechanisms with the strength and integrity commensurate with the security category or classification of the information.",
+    "control_id": "mp-6",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "auto-pe-6",
+    "question": "What does PE-6 (Monitoring Physical Access) require?",
+    "ground_truth": "Monitor physical access to the facility where the system resides to detect and respond to physical security incidents;\nReview physical access logs [organization-defined parameter] and upon occurrence of [organization-defined parameter] ; and\nCoordinate results of reviews and investigations with the organizational incident response capability.",
+    "control_id": "pe-6",
+    "source": "auto",
+    "answerable": true
+  },
+  {
+    "id": "manual-1",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-2",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-3",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-4",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-5",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-6",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-7",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-8",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-9",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-10",
+    "question": "",
+    "ground_truth": "",
+    "control_id": "",
+    "source": "manual",
+    "answerable": true
+  },
+  {
+    "id": "manual-unanswerable-1",
+    "question": "",
+    "ground_truth": "Not covered by the NIST 800-53 catalog.",
+    "control_id": "",
+    "source": "manual",
+    "answerable": false
+  },
+  {
+    "id": "manual-unanswerable-2",
+    "question": "",
+    "ground_truth": "Not covered by the NIST 800-53 catalog.",
+    "control_id": "",
+    "source": "manual",
+    "answerable": false
+  },
+  {
+    "id": "manual-unanswerable-3",
+    "question": "",
+    "ground_truth": "Not covered by the NIST 800-53 catalog.",
+    "control_id": "",
+    "source": "manual",
+    "answerable": false
+  }
+]
