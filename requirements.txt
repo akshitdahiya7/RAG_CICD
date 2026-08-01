@@ -1,13 +1,22 @@
 # Phase 0-1: ingestion + service
 requests==2.32.3
-langchain==0.3.7
-langchain-community==0.3.7
 qdrant-client==1.12.1
 sentence-transformers==3.3.1
 fastapi==0.115.5
 uvicorn==0.32.1
 pydantic==2.10.2
 openai==1.57.0
+
+# langchain family — ragas 0.2.6 needs this specific generation; letting pip
+# resolve these unpinned pulls a much newer langchain (1.x) that removes
+# APIs ragas 0.2.6 imports unconditionally (e.g. langchain_community's old
+# vertexai path, langchain_core.exceptions.ContextOverflowError). Pin the
+# whole family together or a fresh install will break on import.
+langchain==0.3.7
+langchain-community==0.3.7
+langchain-core==0.3.63
+langchain-openai==0.2.9
+langchain-text-splitters==0.3.3
 
 # Phase 2: evaluation + tracking
 ragas==0.2.6
