@@ -25,7 +25,9 @@ JUDGE_MODEL = "gpt-4o-mini"
 JUDGE_EMBEDDING_MODEL = "text-embedding-3-small"
 
 
-def build_samples(golden_rows: list[dict], vector_store: QdrantStore, generator: Generator) -> list[SingleTurnSample]:
+def build_samples(
+    golden_rows: list[dict], vector_store: QdrantStore, generator: Generator
+) -> list[SingleTurnSample]:
     samples = []
     for row in golden_rows:
         question = row["question"]

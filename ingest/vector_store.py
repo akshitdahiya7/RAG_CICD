@@ -16,7 +16,13 @@ def control_point_id(control_id: str) -> str:
 
 
 class QdrantStore:
-    def __init__(self, embedder: Embedder, host: str = "localhost", port: int = 6333, collection_name: str = "nist_800_53_controls"):
+    def __init__(
+        self,
+        embedder: Embedder,
+        host: str = "localhost",
+        port: int = 6333,
+        collection_name: str = "nist_800_53_controls",
+    ):
         self.client = QdrantClient(host=host, port=port)
         self.embedder = embedder
         self.collection_name = collection_name

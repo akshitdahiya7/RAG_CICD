@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+jobs:
+  # Fast, cheap, runs on every push/PR — no external services needed.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: ruff check .
+
+  # Detects whether this push/PR actually touches the RAG pipeline, so the
+  # expensive eval job (real OpenAI calls + full re-index) doesn't run on
+  # every doc/README change.
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      pipeline: ${{ steps.filter.outputs.pipeline }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            pipeline:
+              - 'ingest/**'
+              - 'service/**'
+              - 'eval/**'
+              - 'requirements.txt'
+
+  eval:
+    needs: changes
+    if: needs.changes.outputs.pipeline == 'true'
+    runs-on: ubuntu-latest
+    services:
+      qdrant:
+        image: qdrant/qdrant:v1.12.4
+        ports:
+          - 6333:6333
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Ingest catalog into Qdrant
+        run: |
+          python -c "
+          from ingest.catalog_parser import CatalogParser
+          from ingest.embedder import Embedder
+          from ingest.fetch_catalog import DEST, fetch
+          from ingest.vector_store import QdrantStore
+
+          if not DEST.exists():
+              fetch()
+          controls = CatalogParser().parse(DEST)
+          QdrantStore(embedder=Embedder()).upsert_controls(controls)
+          print(f'Indexed {len(controls)} controls')
+          "
+
+      # run_eval.py owns the pass/fail decision — this step just runs it and
+      # trusts its exit code. A non-zero exit here fails the job automatically,
+      # so the threshold check belongs in run_eval.py itself, not here.
+      - name: Run RAGAS eval (quality gate)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m eval.run_eval

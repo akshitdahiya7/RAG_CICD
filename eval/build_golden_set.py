@@ -101,7 +101,9 @@ def main() -> None:
     )
     auto_count = sum(p.source == "auto" for p in pairs)
     manual_count = sum(p.source == "manual" for p in pairs)
-    print(f"Wrote {len(pairs)} Q&A pairs ({auto_count} auto, {manual_count} manual scaffold) -> {OUTPUT_PATH}")
+    print(
+        f"Wrote {len(pairs)} Q&A pairs ({auto_count} auto, {manual_count} manual scaffold) -> {OUTPUT_PATH}"
+    )
     print("Fill in the empty 'manual' rows by hand before using this for eval.")
 
 

@@ -1,0 +1,11 @@
+target-version = "py311"
+line-length = 110
+
+[lint]
+select = ["E", "F"]
+
+[lint.per-file-ignores]
+# load_dotenv() must run before these modules import anything that reads
+# env vars at import time (OPENAI_API_KEY) — the import-order is deliberate.
+"service/main.py" = ["E402"]
+"eval/run_eval.py" = ["E402"]
