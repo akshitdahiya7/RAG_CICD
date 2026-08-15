@@ -1,6 +1,9 @@
 import os
 
-from openai import OpenAI
+# Langfuse's drop-in OpenAI wrapper — same interface as `openai.OpenAI`, but
+# every chat.completions.create() call is automatically traced (prompt,
+# response, latency, token usage/cost) with zero extra code at the call site.
+from langfuse.openai import OpenAI
 
 from ingest.models import Control
 

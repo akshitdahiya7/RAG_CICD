@@ -24,7 +24,12 @@ mlflow==2.18.0
 datasets==3.1.0
 
 # Phase 4: tracing
-langfuse==2.53.9
+# langfuse 4.x pulls a protobuf version newer than mlflow-skinny's declared
+# pin (pip will warn about this). Tested directly: mlflow's local tracking
+# store doesn't touch the incompatible protobuf surface, so this is safe in
+# practice — just don't be alarmed by the pip resolver warning.
+langfuse==4.14.4
+prometheus-fastapi-instrumentator==7.0.0
 
 # dev
 python-dotenv==1.0.1
